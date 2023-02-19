@@ -14,7 +14,8 @@ public class Solutions {
         return largest;
     }
     //This is for max3 overloaded
-    public static double max3ol(double a, double b, double c){
+    // NB: "overloaded" means it has the same name
+    public static double max3(double a, double b, double c){
         double largest = 0;
         if(a>b){
             largest = a;
@@ -68,6 +69,7 @@ public class Solutions {
 
     public static double trigIdentity(double x){
         //sin^2(`x`) + cos^2(`x`)
+        // BUG: this is not sin^2 (x), it's actually sin(sqrt(x))
         double sin1 = Math.sin( Math.sqrt(x)); 
         double cos1 = Math.cos(Math.sqrt(x));
         double ans = sin1 +cos1;
@@ -77,7 +79,6 @@ public class Solutions {
 
     public static void main(String[] args) {
        System.out.println(max3(0,9,0));
-       System.out.println(max3ol(0.99555, 0.498849, 0.9854));
        System.out.println(odd(true, true, true));
        System.out.println(majority(true, false, true));
        System.out.println(trigIdentity(2));
